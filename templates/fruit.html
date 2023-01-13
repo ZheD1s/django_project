@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for fruit in fruits %}
+        <h1>
+            <a href="{% url 'fruit_detail' fruit.id %}">
+                {{ fruit.name }}
+            </a>
+        </h1>
+    {% endfor %}
+</body>
+</html>
