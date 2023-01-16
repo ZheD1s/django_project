@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="{% url 'fruit_create' %}">
+        <button>
+            Add New product
+        </button>
+    </a>
     {% for fruit in fruits %}
         <h1>
             <a href="{% url 'fruit_detail' fruit.id %}">

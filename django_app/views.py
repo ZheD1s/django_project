@@ -42,3 +42,19 @@ class ProductDeleteView(DeleteView):
     model = Product
     template_name = 'product_delete.html'
     success_url = reverse_lazy('home')
+
+class FruitCreateView(CreateView):
+    model = Fruit
+    template_name = 'fruit_new.html'
+    fields = '__all__'
+
+class FruitUpdateView(UpdateView):
+    model = Fruit
+    template_name = 'fruit_update.html'
+    fields = ['name', 'description', 'price', 'image']
+
+class FruitDeleteView(DeleteView):
+    model = Fruit
+    template_name = 'fruit_delete.html'
+    success_url = reverse_lazy('fruits')
+

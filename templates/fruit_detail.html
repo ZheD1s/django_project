@@ -6,8 +6,20 @@
 </head>
 <body>
     <h1>{{ fruit.name }}</h1>
+    <img src="{{ fruit.image.url }}" style="height:100px; weight:100px;">
     <p>{{ fruit.description }}</p>
     <p>{{ fruit.price }}</p>
     <p>{{ fruit.manufacturing_date }}</p>
+    <a href="{% url 'fruit_update' fruit.id %}">
+        <button>
+            Update Fruit Detail
+        </button>
+    </a>
+    <br>
+    <a href="{% url 'fruit_delete' fruit.id %}">
+        <button>
+            Delete Fruit
+        </button>
+    </a>
 </body>
 </html>

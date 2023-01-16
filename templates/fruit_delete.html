@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Fruit</title>
+</head>
+<body>
+    <h1>Delete Fruit</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete fruit {{ fruit.name }}?</p>
+        <input type="submit" value="delete">
+    </form>
+</body>
+</html>
