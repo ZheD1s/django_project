@@ -10,4 +10,9 @@ class ProductCreationForm(forms.ModelForm): # ModelForm - для работы с
             'price': forms.NumberInput,
             'image': forms.FileInput
         }
-
+        labels = {
+            'name': 'Название',
+            'description': 'Описание',
+            'price': 'Цена',
+            'image': 'Изображение'
+        }
