@@ -8,6 +8,6 @@ class ProductCreationForm(forms.ModelForm): # ModelForm - для работы с
             'name': forms.TextInput,
             'description': forms.TextInput,
             'price': forms.NumberInput,
-            'image': forms.ImageField
+            'image': forms.FileInput
         }
 
