@@ -23,9 +23,15 @@
         </a>
         <br>
         <a href="{% url 'product_create' %}">
-        <button>
-            Add New product
-        </button>
+            <button>
+                Add New product
+            </button>
+        </a>
+        <br>
+        <a href="{% url 'manufacturers' %}">
+            <button>
+                Manufacturer
+            </button>
         </a>
     {% else %}
         <h1>You not authenticated</h1>

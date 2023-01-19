@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manufacturer Detail</title>
+</head>
+<body>
+    <h1>{{ manufacturer.name }}</h1>
+    <p>{{ manufacturer.capital }}</p>
+    <p>{{ manufacturer.country }}</p>
+    <p>{{ manufacturer.president }}</p>
+    <a href="{% url 'manufacturer_update' manufacturer.id %}">
+        <button>
+            Update Manufacturer Detail
+        </button>
+    </a>
+</body>
+</html>

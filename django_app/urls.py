@@ -15,6 +15,10 @@ urlpatterns = [
     path('product/<int:pk>/update', ProductUpdateView.as_view(), name='product_update'),
     path('product/<int:pk>/delete', ProductDeleteView.as_view(), name='product_delete'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('manufacturers/', ManufacturersListView.as_view(), name='manufacturers'),
+    path('manufacturers/<int:pk>/', ManufacturersDetailView.as_view(), name='manufacturer_detail'),
+    path('manufacturers/new/', ManufacturersCreateView.as_view(), name='manufacturer_create'),
+    path('manufacturers/<int:pk>/update', ManufacturersUpdateView.as_view(), name='manufacturer_update'),
     path('', ProductListView.as_view(), name='home'),
 ]
 

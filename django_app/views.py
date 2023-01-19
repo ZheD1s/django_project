@@ -6,6 +6,7 @@ from django.views.generic import ListView, \
     DeleteView
 from .models import *
 from django.urls import reverse_lazy
+from .forms import ProductCreationForm
 
 # Create your views here.
 class ProductListView(ListView):
@@ -29,9 +30,9 @@ class FruitDetailView(DetailView):
     context_object_name = 'fruit'
 
 class ProductCreateView(CreateView):
+    form_class = ProductCreationForm
     model = Product
     template_name = 'product_new.html'
-    fields = '__all__'
 
 class ProductUpdateView(UpdateView):
     model = Product
@@ -58,3 +59,22 @@ class FruitDeleteView(DeleteView):
     template_name = 'fruit_delete.html'
     success_url = reverse_lazy('fruits')
 
+class ManufacturersListView(ListView):
+    model = Manufacturer
+    template_name = 'manufacturers.html'
+    context_object_name = 'manufacturers'
+
+class ManufacturersDetailView(DetailView):
+    model = Manufacturer
+    template_name = 'manufacturer_detail.html'
+    context_object_name = 'manufacturer'
+
+class ManufacturersCreateView(CreateView):
+    model = Manufacturer
+    template_name = 'manufacturer_new.html'
+    fields = '__all__'
+
+class ManufacturersUpdateView(UpdateView):
+    model = Manufacturer
+    template_name = 'manufacturer_update.html'
+    fields = '__all__'

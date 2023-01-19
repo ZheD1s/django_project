@@ -19,11 +19,14 @@ class Product(models.Model):
 class Manufacturer(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False, unique=True)
     capital = models.PositiveBigIntegerField(null=False, blank=False)
-    country = models.CharField(max_length=100, null=False, blank=False, unique=True)
+    country = models.CharField(max_length=100, null=False, blank=False)
     president = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
         return str(self.name)
+
+    def get_absolute_url(self):
+        return reverse('manufacturer_detail', args=[str(self.id)])
 
 
 class Fruit(models.Model):

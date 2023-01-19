@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manufacturers</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+            <h1>Hello, staff {{ user.username }}!</h1>
+            <a href="{% url 'profile' %}">
+                <button>
+                    Profile
+                </button>
+            </a>
+            <br>
+            <a href="{% url 'logout' %}">
+                <button>
+                    Log Out
+                </button>
+            </a>
+            <br>
+            <a href="{% url 'manufacturer_create' %}">
+                <button>
+                    Add New product
+                </button>
+            </a>
+            <br>
+            <a href="{% url 'home' %}">
+                <button>
+                    Home Page
+                </button>
+            </a>
+            {% for manufacturer in manufacturers %}
+                <h1>
+                    <a href="{% url 'manufacturer_detail' manufacturer.id %}">
+                        {{ manufacturer.name }}
+                    </a>
+                </h1>
+            {% endfor %}
+        {% else %}
+            <h1>You not stuff user</h1>
+            <a href="{% url 'profile' %}">
+                <button>
+                    Profile
+                </button>
+            </a>
+            <br>
+            <a href="{% url 'logout' %}">
+                <button>
+                    Log Out
+                </button>
+            </a>
+            <br>
+            <a href="{% url 'home' %}">
+                <button>
+                    Home Page
+                </button>
+            </a>
+        {% endif %}
+    {% else %}
+        <h1>You not authenticated</h1>
+        <a href="{% url 'login' %}">
+            <button>
+                Log In
+            </button>
+        </a>
+        <br>
+        <a href="{% url 'registration' %}">
+            <button>
+                Registration
+            </button>
+        </a>
+    {% endif %}
+</body>
+</html>
